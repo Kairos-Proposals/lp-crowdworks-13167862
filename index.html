@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フラクタル株式会社様へのご提案 | Kairos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#0B1622;
+    --bg-panel:#122436;
+    --bg-panel2:#0F2030;
+    --accent-gold:#E8A33D;
+    --accent-teal:#4ECDC4;
+    --text-light:#F2EFE6;
+    --text-dim:#9FB3C0;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg-deep);
+    color:var(--text-light);
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:400;
+    line-height:1.9;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.brand{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:900;
+    letter-spacing:0.02em;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  .wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    padding:88px 0 96px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(78,205,196,0.10), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(232,163,61,0.10), transparent 45%),
+      linear-gradient(160deg, #0B1622 0%, #0E1D2C 55%, #10263A 100%);
+    border-bottom:1px solid rgba(159,179,192,0.15);
+    text-align:center;
+  }
+
+  .kicker{
+    display:inline-block;
+    font-size:12.5px;
+    letter-spacing:0.22em;
+    color:var(--accent-teal);
+    border:1px solid rgba(78,205,196,0.4);
+    padding:6px 18px;
+    border-radius:100px;
+    margin-bottom:34px;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+  }
+
+  .hero h1{
+    font-size:clamp(28px,5vw,46px);
+    line-height:1.5;
+    margin-bottom:18px;
+  }
+  .hero h1 span{
+    color:var(--accent-gold);
+  }
+
+  .hero p.sub{
+    color:var(--text-dim);
+    font-size:15.5px;
+    max-width:520px;
+    margin:0 auto 56px;
+  }
+
+  /* Fractal visual */
+  .fractal-visual{
+    position:relative;
+    width:260px;
+    height:260px;
+    margin:0 auto 56px;
+  }
+  .node{
+    position:absolute;
+    border:2px solid var(--accent-teal);
+    transform:rotate(45deg);
+  }
+  .n1{width:150px;height:150px;top:50%;left:50%;margin:-75px 0 0 -75px;opacity:0.85;border-color:var(--accent-teal);}
+  .n1::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    margin:auto;
+    width:8px;height:8px;
+    background:var(--accent-gold);
+    border-radius:50%;
+    transform:rotate(-45deg) translate(-4px,-4px);
+    top:50%;left:50%;
+  }
+  .n2{width:70px;height:70px;top:14px;left:14px;opacity:0.65;border-color:var(--accent-gold);}
+  .n3{width:70px;height:70px;top:14px;right:14px;opacity:0.65;border-color:var(--accent-gold);}
+  .n4{width:70px;height:70px;bottom:14px;left:14px;opacity:0.65;border-color:var(--accent-gold);}
+  .n5{width:70px;height:70px;bottom:14px;right:14px;opacity:0.65;border-color:var(--accent-gold);}
+  .n6{width:30px;height:30px;top:0;left:0;opacity:0.4;}
+  .n7{width:30px;height:30px;top:0;right:0;opacity:0.4;}
+  .n8{width:30px;height:30px;bottom:0;left:0;opacity:0.4;}
+  .n9{width:30px;height:30px;bottom:0;right:0;opacity:0.4;}
+
+  .from-kairos{
+    font-size:13px;
+    color:var(--text-dim);
+    letter-spacing:0.05em;
+  }
+  .from-kairos b{color:var(--text-light);font-weight:700;}
+
+  /* ===== SECTION COMMON ===== */
+  section{
+    padding:84px 0;
+  }
+  .section-alt{
+    background:var(--bg-panel);
+    border-top:1px solid rgba(159,179,192,0.1);
+    border-bottom:1px solid rgba(159,179,192,0.1);
+  }
+  .section-head{
+    text-align:center;
+    margin-bottom:56px;
+  }
+  .section-head .label{
+    display:block;
+    font-size:12px;
+    color:var(--accent-gold);
+    letter-spacing:0.24em;
+    margin-bottom:14px;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+  }
+  .section-head h2{
+    font-size:clamp(22px,3.4vw,30px);
+  }
+
+  /* ===== UNDERSTANDING ===== */
+  .understand-box{
+    max-width:760px;
+    margin:0 auto;
+    background:linear-gradient(135deg, rgba(78,205,196,0.06), rgba(232,163,61,0.05));
+    border:1px solid rgba(159,179,192,0.15);
+    border-radius:14px;
+    padding:40px 36px;
+    position:relative;
+  }
+  .understand-box::before{
+    content:"“";
+    position:absolute;
+    top:-10px;
+    left:24px;
+    font-size:64px;
+    color:var(--accent-teal);
+    opacity:0.3;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+  }
+  .understand-box p{
+    color:var(--text-light);
+    font-size:15.5px;
+  }
+  .understand-box p + p{
+    margin-top:18px;
+  }
+  .understand-box .tag-row{
+    margin-top:28px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .tag{
+    font-size:12px;
+    color:var(--accent-teal);
+    border:1px solid rgba(78,205,196,0.35);
+    padding:5px 14px;
+    border-radius:100px;
+  }
+
+  /* ===== VALUE CARDS ===== */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .card{
+    background:var(--bg-panel2);
+    border:1px solid rgba(159,179,192,0.12);
+    border-radius:14px;
+    padding:30px 26px;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    width:60px;height:60px;
+    top:-20px;right:-20px;
+    border:1px solid var(--accent-teal);
+    transform:rotate(45deg);
+    opacity:0.25;
+  }
+  .card .num{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-size:13px;
+    color:var(--accent-gold);
+    letter-spacing:0.1em;
+    margin-bottom:14px;
+    display:block;
+  }
+  .card h3{
+    font-size:17px;
+    margin-bottom:12px;
+    line-height:1.5;
+  }
+  .card p{
+    font-size:13.8px;
+    color:var(--text-dim);
+  }
+
+  /* ===== FLOW ===== */
+  .flow{
+    max-width:680px;
+    margin:0 auto;
+  }
+  .flow-item{
+    display:flex;
+    gap:22px;
+    padding:0 0 40px;
+    position:relative;
+  }
+  .flow-item:last-child{padding-bottom:0;}
+  .flow-item::before{
+    content:"";
+    position:absolute;
+    left:21px;
+    top:46px;
+    bottom:-4px;
+    width:1px;
+    background:linear-gradient(to bottom, rgba(78,205,196,0.5), transparent);
+  }
+  .flow-item:last-child::before{display:none;}
+  .flow-num{
+    flex-shrink:0;
+    width:44px;height:44px;
+    border-radius:50%;
+    border:1px solid var(--accent-teal);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:700;
+    color:var(--accent-teal);
+    background:rgba(78,205,196,0.06);
+  }
+  .flow-body h3{
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .flow-body .time{
+    font-size:12px;
+    color:var(--accent-gold);
+    margin-bottom:8px;
+    display:inline-block;
+  }
+  .flow-body p{
+    font-size:13.8px;
+    color:var(--text-dim);
+  }
+
+  /* ===== CLOSING ===== */
+  .closing{
+    text-align:center;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(232,163,61,0.12), transparent 55%),
+      var(--bg-deep);
+    padding:96px 0 100px;
+  }
+  .closing h2{
+    font-size:clamp(24px,4vw,34px);
+    margin-bottom:18px;
+  }
+  .closing p{
+    color:var(--text-dim);
+    max-width:480px;
+    margin:0 auto 40px;
+    font-size:14.5px;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--accent-gold);
+    color:#0B1622;
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:700;
+    padding:16px 44px;
+    border-radius:100px;
+    font-size:15px;
+    letter-spacing:0.04em;
+    transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 8px 24px rgba(232,163,61,0.25);
+  }
+  .cta-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(232,163,61,0.35);
+  }
+  .footer-note{
+    margin-top:50px;
+    font-size:12px;
+    color:var(--text-dim);
+    opacity:0.7;
+  }
+
+  footer{
+    text-align:center;
+    padding:28px 0;
+    font-size:12px;
+    color:var(--text-dim);
+    border-top:1px solid rgba(159,179,192,0.1);
+  }
+
+  @media (max-width:760px){
+    .cards{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .hero{padding:64px 0 72px;}
+    .understand-box{padding:30px 22px;}
+    .fractal-visual{width:210px;height:210px;}
+    .n1{width:120px;height:120px;margin:-60px 0 0 -60px;}
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">PROPOSAL FOR フラクタル株式会社</span>
+      <div class="fractal-visual" aria-hidden="true">
+        <span class="node n1"></span>
+        <span class="node n2"></span>
+        <span class="node n3"></span>
+        <span class="node n4"></span>
+        <span class="node n5"></span>
+        <span class="node n6"></span>
+        <span class="node n7"></span>
+        <span class="node n8"></span>
+        <span class="node n9"></span>
+      </div>
+      <h1>一記事の精度が、<br><span>八記事分の信頼</span>になる。</h1>
+      <p class="sub">Claudeが生成したコードに、確かな検証と手直しを重ねる。マニュアルとプロンプトという「型」を、正確に、そして丁寧に仕上げます。</p>
+      <p class="from-kairos"><b>Kairos</b>（Web制作・システム開発チーム）よりご提案</p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">UNDERSTANDING</span>
+        <h2>このお仕事、私たちはこう理解しています</h2>
+      </div>
+      <div class="understand-box">
+        <p>マニュアルとプロンプトをあらかじめご用意いただいているということは、単なるコーディング作業ではなく「再現性」と「品質の一貫性」を両立させる仕事だと理解しています。Claudeが生成するコードは優秀ですが、そのまま鵜呑みにせず、崩れやミスを見抜き、正しくWordPressの下書きへ落とし込む「最後の一手」の精度こそが、このお仕事の本質だと考えています。</p>
+        <p>全8記事、約8時間という積み重ねの中で、1記事目と8記事目のクオリティにブレがないこと。そして納期2025年5月18日に対して、着実に、かつ柔軟に対応できることが求められていると受け止めています。</p>
+        <div class="tag-row">
+          <span class="tag">マニュアル・プロンプト遵守</span>
+          <span class="tag">生成コードの検証・修正</span>
+          <span class="tag">WordPress下書き投稿</span>
+          <span class="tag">全8ページ／約8時間</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">WHAT KAIROS OFFERS</span>
+        <h2>Kairosがご提供できる価値</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>AIコーディングの実務経験</h3>
+          <p>ClaudeやChatGPT等が生成するコードの検証・修正を日常的に行っています。「生成されたものを疑い、確かめる」視点を持っています。</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>マニュアル・プロンプト遵守力</h3>
+          <p>独自のやり方を混ぜず、ご用意いただいた手順とプロンプトに忠実に作業します。再現性と一貫性を最優先します。</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>WordPress入稿の正確性</h3>
+          <p>タグ崩れ、余分な改行、装飾ミスなど、下書き段階で潰しておくべき粗を丁寧にチェックし、確実に処理します。</p>
+        </div>
+        <div class="card">
+          <span class="num">04</span>
+          <h3>柔軟なスケジュール調整</h3>
+          <p>5/18納期に対して、分割納品や前倒しのご相談にも対応可能です。8記事を計画的に処理し、進捗もご報告します。</p>
+        </div>
+        <div class="card">
+          <span class="num">05</span>
+          <h3>継続を見据えた改善提案</h3>
+          <p>一度きりの作業で終わらせず、作業中に見えたプロンプトや手順の改善案があればフィードバックいたします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="label">FLOW &amp; SCHEDULE</span>
+        <h2>進め方・スケジュールイメージ</h2>
+      </div>
+      <div class="flow">
+        <div class="flow-item">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <span class="time">Day 0（半日）</span>
+            <h3>キックオフ確認</h3>
+            <p>マニュアル・プロンプト・トンマナ・WordPress側の投稿ルールを最終確認します。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <span class="time">Day 1〜2</span>
+            <h3>試験施工（1〜3記事目）</h3>
+            <p>まず数記事を仕上げ、仕上がりのご確認・フィードバックをいただきます。ズレを早期に解消します。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <span class="time">Day 3〜5</span>
+            <h3>本施工（4〜8記事目）</h3>
+            <p>Claude生成→確認・修正→WordPress下書き投稿までを、記事ごとに丁寧に積み重ねます。</p>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <span class="time">納期内</span>
+            <h3>最終チェック＆納品報告</h3>
+            <p>全8記事の下書きを見直し、抜け漏れがないか最終確認のうえご報告いたします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <h2>まずは、1記事分からでも。</h2>
+      <p>ご不明点やご相談があれば、どうぞお気軽にお声かけください。丁寧な確認と正確な仕上げで、フラクタル株式会社様のお仕事に貢献したいと考えています。</p>
+      <a href="#" class="cta-btn">Kairosに問い合わせる</a>
+      <div class="footer-note">Kairos（カイロス）｜Web制作・システム開発チーム</div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; Kairos — Proposal for フラクタル株式会社
+  </footer>
+
+</body>
+</html>
